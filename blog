@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - Katrina Wehr, Ph.D.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        header {
+            padding: 30px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .back-link {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link a:hover {
+            color: #333;
+        }
+
+        .article-header {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .article-header h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .article-content h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin: 50px 0 20px;
+        }
+
+        .article-content h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 40px 0 15px;
+        }
+
+        .article-content p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0 25px 30px;
+        }
+
+        .article-content li {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .article-content blockquote {
+            border-left: 3px solid #333;
+            padding-left: 25px;
+            margin: 40px 0;
+            font-size: 22px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .article-content a {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        .article-content a:hover {
+            opacity: 0.6;
+        }
+
+        .article-image {
+            margin: 50px 0;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .article-image figcaption {
+            font-size: 15px;
+            color: #666;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .callout {
+            background: #f9f9f9;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 3px solid #333;
+        }
+
+        .callout p {
+            margin-bottom: 0;
+        }
+
+        .article-footer {
+            max-width: 800px;
+            margin: 80px auto 0;
+            padding: 40px 20px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .article-footer p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 60px auto 50px;
+            padding: 40px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 32px;
+            }
+
+            .article-content h2 {
+                font-size: 26px;
+            }
+
+            .article-content h3 {
+                font-size: 22px;
+            }
+
+            .article-content p,
+            .article-content li {
+                font-size: 17px;
+            }
+
+            .article-content blockquote {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Katrina Wehr, Ph.D.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="back-link">
+            <a href="blog.html">← Back to Blog</a>
+        </div>
+
+        <div class="article-header">
+            <h1>Your Blog Post Title Goes Here</h1>
+            <div class="article-meta">January 12, 2026 • 8 min read</div>
+        </div>
+
+        <article class="article-content">
+            <p>Start with an engaging opening paragraph that draws readers in and clearly establishes what this post is about. This is your chance to hook the reader and make them want to continue.</p>
+
+            <p>Continue developing your ideas with clear, well-structured paragraphs. Each paragraph should focus on a single idea or concept, making your writing easy to follow and digest.</p>
+
+            <h2>Main Section Heading</h2>
+            <p>Break your content into clear sections with descriptive headings. This makes your post scannable and helps readers find the information they're looking for.</p>
+
+            <figure class="article-image">
+                <img src="images/blog-image.jpg" alt="Descriptive alt text">
+                <figcaption>Caption explaining what the image shows and why it's relevant</figcaption>
+            </figure>
+
+            <h3>Subsection Heading</h3>
+            <p>Use subsections to further organize your content. This hierarchical structure helps readers understand the relationship between different ideas.</p>
+
+            <p>Here are some key points to consider:</p>
+            <ul>
+                <li>First important point with supporting details and context</li>
+                <li>Second important point that builds on the previous one</li>
+                <li>Third point that ties everything together</li>
+            </ul>
+
+            <div class="callout">
+                <p><strong>Key Takeaway:</strong> Use callout boxes to highlight particularly important information that you want readers to remember.</p>
+            </div>
+
+            <h2>Another Main Section</h2>
+            <p>Continue developing your argument or narrative. Use concrete examples and specific details to make your points more compelling and memorable.</p>
+
+            <blockquote>
+                "You can use blockquotes to highlight particularly insightful or important statements. They add visual variety and emphasis to your content."
+            </blockquote>
+
+            <p>As you wrap up each section, think about how it connects to what comes next. Good transitions help maintain the flow of your writing.</p>
+
+            <h2>Conclusion</h2>
+            <p>Summarize your main points and leave readers with something to think about. What should they take away from this post? What action might they take or what perspective might shift?</p>
+
+            <p>End with a strong closing statement that reinforces the value of what you've shared and invites further reflection or engagement.</p>
+
+            <div class="article-footer">
+                <p><em>Have thoughts on this topic? I'd love to hear from you. <a href="mailto:katrina.m.wehr@gmail.com">Send me an email</a>.</em></p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <h2>Katrina Wehr, Ph.D.</h2>
+        <p><a href="mailto:katrina.m.wehr@gmail.com">katrina.m.wehr@gmail.com</a></p>
+    </footer>
+</body>
+</html>
