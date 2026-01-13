@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Katrina Wehr, Ph.D.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        header {
+            padding: 30px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .back-link {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link a:hover {
+            color: #333;
+        }
+
+        .project-header {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .project-header h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .project-hero-image {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .project-hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin: 60px 0 20px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 40px 0 15px;
+        }
+
+        .project-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .project-content ul {
+            margin: 20px 0 25px 30px;
+        }
+
+        .project-content li {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .project-image {
+            margin: 50px 0;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-image figcaption {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 3px solid #333;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 40px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-content h2 {
+                font-size: 24px;
+            }
+
+            .project-content p,
+            .project-content li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Katrina Wehr, Ph.D.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="back-link">
+            <a href="portfolio.html">← Back to Portfolio</a>
+        </div>
+
+        <div class="project-header">
+            <h1>Project Title</h1>
+            <div class="project-meta">Role: Lead Researcher & Designer | Year: 2024</div>
+        </div>
+
+        <div class="project-hero-image">
+            <img src="images/project-hero.jpg" alt="Project hero image">
+        </div>
+
+        <article class="project-content">
+            <h2>Overview</h2>
+            <p>Brief introduction to the project, the problem you were solving, and why it mattered. This should give readers context for understanding the work that follows.</p>
+
+            <div class="highlight-box">
+                <h3>Challenge</h3>
+                <p>What was the core problem or question you were addressing?</p>
+            </div>
+
+            <h2>Research & Discovery</h2>
+            <p>Describe your research approach and methodology. What methods did you use? Who did you talk to? What did you discover?</p>
+
+            <figure class="project-image">
+                <img src="images/research-process.jpg" alt="Research process">
+                <figcaption>Caption describing the image</figcaption>
+            </figure>
+
+            <h3>Key Insights</h3>
+            <ul>
+                <li>First major insight from your research</li>
+                <li>Second major insight that shaped your approach</li>
+                <li>Third insight that led to design decisions</li>
+            </ul>
+
+            <h2>Solution & Design</h2>
+            <p>Explain how you translated insights into solutions. What did you design? How did it address the problems you identified?</p>
+
+            <figure class="project-image">
+                <img src="images/solution-mockup.jpg" alt="Solution mockup">
+                <figcaption>Caption describing the solution</figcaption>
+            </figure>
+
+            <h2>Impact & Outcomes</h2>
+            <p>What happened as a result of your work? Include both quantitative and qualitative outcomes when possible.</p>
+
+            <div class="highlight-box">
+                <h3>Results</h3>
+                <p>Specific measurable outcomes or meaningful changes that resulted from the project.</p>
+            </div>
+
+            <h2>Reflection</h2>
+            <p>What did you learn? What would you do differently? What surprised you about the process or outcomes?</p>
+        </article>
+    </main>
+
+    <footer>
+        <h2>Katrina Wehr, Ph.D.</h2>
+        <p><a href="mailto:katrina.m.wehr@gmail.com">katrina.m.wehr@gmail.com</a></p>
+    </footer>
+</body>
+</html>
