@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Katrina Wehr, Ph.D.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        header {
+            padding: 30px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .back-link {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link a:hover {
+            color: #333;
+        }
+
+        .project-header {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .project-header h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .project-hero-image {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .project-hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin: 60px 0 20px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 40px 0 15px;
+        }
+
+        .project-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .project-content ul {
+            margin: 20px 0 25px 30px;
+        }
+
+        .project-content li {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .project-image {
+            margin: 50px 0;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-image figcaption {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 3px solid #333;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 40px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-content h2 {
+                font-size: 24px;
+            }
+
+            .project-content p,
+            .project-content li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Katrina Wehr, Ph.D.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="https://kat-wehr.github.io/drkatwehr-blog/index.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="back-link">
+            <a href="portfolio.html">← Back to Portfolio</a>
+        </div>
+
+        <div class="project-header">
+            <h1>Creating a Belonging-Focused Resource Hub for Designers & Educators</h1>
+            <div class="project-meta">Role: Lead Researcher & Designer | Year: 2025</div>
+        </div>
+
+        <div class="project-hero-image">
+            <img src="images/project-hero.jpg" alt="Project hero image">
+        </div>
+
+        <article class="project-content">
+            <h2><a href="https://kat-wehr.github.io/design-for-belonging/">Visit the Belonging Resource Hub</a></h2>
+            <p>Free access | No registration required | Workshop-ready materials included</p>
+
+            <div class="highlight-box">
+                <h3>Challenge</h3>
+                <p>After completing my dissertation on how design can influence belonging in online learning environments, I faced a common academic dilemma: my research findings were trapped behind paywalls and buried in dense academic text. My work wasn’t reaching the practitioners who could actually implement it.</p> 
+                <p>I wanted to transform my dissertation work into something immediately actionable for instructional designers and faculty working in online higher education. The challenge was determining how to translate complex research findings into practical resources that busy practitioners could actually use in their daily work.</p>
+            </div>
+
+            <h2>Solution & Design</h2>
+            <p>Instead of pursuing traditional academic dissemination routes, I created a web-based resource hub designed to make belonging-centered design strategies freely accessible and immediately implementable. I used generative AI tools to get me started, and populated the template with my work. Drawing on insights from my focus group participants, I identified the tools and formats that instructional designers already valued and used in their practice.</p> 
+            <p>This research-informed approach guided my creation of:</p>
+              <ul>
+                <li>Reflection questionnaire to help educators assess their current belonging practices</li>
+                <li>Template library with concrete examples for implementing specific belonging strategies</li>
+                <li>Action planning tools for systematic implementation</li>
+                <li>Workshop facilitation guide enabling instructional designers to lead belonging-focused teaching groups on their campuses</li>
+                <li>Supporting materials including slide decks and facilitator resources</li>
+              </ul>
+
+            <h2>Design and Technical Decisions</h2>
+            <p>I hosted the site on GitHub Pages to ensure free, permanent access, removing the paywall barrier that often blocks practitioner engagement with academic work. The clean, professional design prioritizes usability and immediate value over academic complexity. I also hope the transparency of GitHub’s platform structure can offer a model for others who wish to disseminate their own work.</p> 
+            <p>As an experienced LXD, I structured the site as a guided learning experience rather than a simple resource repository, incorporating my professional expertise in working with faculty development.</p>
+
+            <h2>Intended Impact</h2>
+            <p>Immediate Access: The site launched with a significant surge in traffic, demonstrating immediate demand for belonging-focused educational resources. While traffic has naturally stabilized, the site serves as an ongoing hub for educators seeking practical strategies.</p>
+<p>Community Building Potential: The workshop facilitation materials enable instructional designers to create belonging-focused professional development opportunities on their own campuses, extending the impact beyond individual use.</p>
+<p>Research Translation Model: This project represents my commitment to translating research into practice. By making academic findings freely accessible in actionable formats via GitHub and AI coding support, I've created a model for other Ph.D.s to share research directly to the practitioner community.</p>
+
+            <div class="highlight-box">
+                <h3>Future Vision</h3>
+                <p>I plan to continue expanding the resource hub based on community needs and feedback, using LinkedIn to announce updates and maintain engagement with the instructional design community. The site is designed to evolve as a living repository of belonging-centered strategies for online learning.</p>
+            </div>
+
+            </article>
+    </main>
+
+    <footer>
+        <h2>Katrina Wehr, Ph.D.</h2>
+        <p><a href="mailto:katrina.m.wehr@gmail.com">katrina.m.wehr@gmail.com</a></p>
+    </footer>
+</body>
+</html>
