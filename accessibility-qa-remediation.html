@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility QA &amp; Remediation - Katrina Wehr, Ph.D.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        header {
+            padding: 30px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        .back-link {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .back-link a:hover {
+            color: #333;
+        }
+
+        .project-header {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .project-header h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .project-content h2 {
+            font-size: 28px;
+            font-weight: 400;
+            margin: 60px 0 20px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 40px 0 15px;
+        }
+
+        .project-content p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .project-content ul {
+            margin: 20px 0 25px 30px;
+        }
+
+        .project-content li {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            padding: 30px;
+            margin: 40px 0;
+            border-left: 3px solid #333;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+        }
+
+        /* Results table - new element for this case study, styled to match the existing visual language */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 18px;
+        }
+
+        .results-table th,
+        .results-table td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .results-table th {
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #333;
+        }
+
+        .results-table td {
+            color: #333;
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 60px;
+            margin: 30px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat .stat-number {
+            font-size: 36px;
+            font-weight: 400;
+            display: block;
+        }
+
+        .stat .stat-label {
+            font-size: 15px;
+            color: #666;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 40px 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 32px;
+            }
+
+            .project-content h2 {
+                font-size: 24px;
+            }
+
+            .project-content p,
+            .project-content li {
+                font-size: 16px;
+            }
+
+            .results-table {
+                font-size: 15px;
+            }
+
+            .stat-row {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Katrina Wehr, Ph.D.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="https://kat-wehr.github.io/drkatwehr-blog/index.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="back-link">
+            <a href="portfolio.html">← Back to Portfolio</a>
+        </div>
+
+        <div class="project-header">
+            <h1>Accessibility QA &amp; Remediation: Bringing 9 Courses to Full Compliance</h1>
+            <div class="project-meta">Role: Accessibility Consultant | Client: A Public University (Confidential)</div>
+        </div>
+
+        <article class="project-content">
+
+            <div class="highlight-box">
+                <h3>Client Challenge</h3>
+                <p>The university needed a batch of online courses brought into compliance with accessibility standards ahead of institutional review. Course content had accumulated over multiple semesters without a consistent accessibility standard, resulting in a wide range of starting points — some courses were close to compliant, others had significant structural and content issues. Each course contained between 40 and 100 files requiring remediation, with issues ranging from minor to severe.</p>
+            </div>
+
+            <h2>My Process</h2>
+            <p>I ran a two-layer QA process: automated scoring via Blackboard Ally combined with manual review against the Quality Matters (QM) rubric and custom internal criteria, to catch issues automated tools miss, like logical reading order, meaningful link text, and appropriate use of ARIA.</p>
+            <p>Issues were triaged by severity, from severe to major, and by type, so remediation effort could be prioritized where it would have the greatest impact on usability for students using assistive technology. After remediation, I re-scored each course to confirm measurable improvement with no regressions.</p>
+
+            <h3>Common Issue Categories Addressed</h3>
+            <ul>
+                <li>Heading structure &amp; navigation (improper heading hierarchy, non-semantic markup)</li>
+                <li>Document accessibility (PDFs and Word docs lacking tags, reading order, or proper structure)</li>
+                <li>Color contrast failures</li>
+                <li>Images and graphics missing meaningful alt text</li>
+            </ul>
+
+            <h2>Results</h2>
+
+            <div class="stat-row">
+                <div class="stat">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Courses remediated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">60</span>
+                    <span class="stat-label">Hours to completion</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">77 → 99+</span>
+                    <span class="stat-label">Average Ally score improvement</span>
+                </div>
+            </div>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Starting Ally Score</th>
+                        <th>Final Ally Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Course 1</td><td>58</td><td>99+</td></tr>
+                    <tr><td>Course 2</td><td>75</td><td>99+</td></tr>
+                    <tr><td>Course 3</td><td>79</td><td>99+</td></tr>
+                    <tr><td>Course 4</td><td>69</td><td>99+</td></tr>
+                    <tr><td>Course 5</td><td>77</td><td>99+</td></tr>
+                    <tr><td>Course 6</td><td>69</td><td>99+</td></tr>
+                    <tr><td>Course 7</td><td>87</td><td>99+</td></tr>
+                    <tr><td>Course 8</td><td>91</td><td>99+</td></tr>
+                    <tr><td>Course 9</td><td>92</td><td>99+</td></tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h3>Why It Matters</h3>
+                <p>Ally scores are a proxy for real barriers: a low score means students using screen readers, keyboard navigation, or other assistive technology are likely hitting broken or confusing experiences. Bringing every course to 99+ meant closing that gap consistently across the board, not just fixing the easiest wins.</p>
+                <p>This work also positioned the university ahead of ADA Title II compliance deadlines for public entities, which require web and course content to meet WCAG 2.1 Level AA.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <h2>Katrina Wehr, Ph.D.</h2>
+        <p><a href="mailto:katrina.m.wehr@gmail.com">katrina.m.wehr@gmail.com</a></p>
+    </footer>
+</body>
+</html>
