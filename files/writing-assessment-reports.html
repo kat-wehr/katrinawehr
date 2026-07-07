@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Assessment Reports</title>
+  <style>
+    /* Base */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: #000000;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      z-index: 9999;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Layout */
+    .page-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Page title */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 2.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #000000;
+    }
+
+    /* Table of contents */
+    nav[aria-label="Table of contents"] {
+      margin-bottom: 3rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #767676;
+    }
+
+    nav[aria-label="Table of contents"] h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.75rem;
+      font-weight: 700;
+    }
+
+    nav[aria-label="Table of contents"] ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+
+    nav[aria-label="Table of contents"] li {
+      margin-bottom: 0.3rem;
+    }
+
+    nav[aria-label="Table of contents"] a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    nav[aria-label="Table of contents"] a:hover,
+    nav[aria-label="Table of contents"] a:focus {
+      outline: 2px solid #000000;
+      outline-offset: 2px;
+    }
+
+    /* Section groupings */
+    .content-section {
+      margin-bottom: 3rem;
+    }
+
+    /* Instructional headings */
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: #000000;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 1.25rem 0 0.5rem;
+      color: #000000;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    ul, ol {
+      margin: 0 0 1rem;
+      padding-left: 1.75rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* -----------------------------------------------
+       SAMPLE REPORT BLOCK
+       Visually distinct from instructional content.
+       Uses a light gray background (#f2f2f2) on white.
+       Contrast of #000000 on #f2f2f2 = 18.1:1 (passes AA).
+       Border-left uses #595959 — 7:1 on white (passes AA).
+    ----------------------------------------------- */
+    .sample-report {
+      background-color: #f2f2f2;
+      border-left: 5px solid #595959;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .sample-report-label {
+      display: inline-block;
+      background-color: #595959;
+      color: #ffffff;       /* #ffffff on #595959 = 7:1 — passes AA */
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .sample-report h3 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .sample-report p,
+    .sample-report li {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    /* Identifying data two-column layout */
+    .id-data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 480px) {
+      .id-data-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .id-data-grid dt {
+      font-weight: 700;
+      margin: 0;
+      padding-top: 0.35rem;
+    }
+
+    .id-data-grid dd {
+      margin: 0;
+      padding-top: 0.35rem;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    caption {
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      caption-side: top;
+    }
+
+    th, td {
+      border: 1px solid #595959;
+      padding: 0.45rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    thead th {
+      background-color: #d9d9d9;   /* #000000 on #d9d9d9 = 10.7:1 — passes AA */
+      font-weight: 700;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Referral questions list */
+    .referral-questions {
+      padding-left: 1.5rem;
+    }
+
+    .referral-questions li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Focus styles (meets 2.4.7) */
+    a:focus,
+    button:focus {
+      outline: 3px solid #000000;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="page-wrapper">
+
+    <header>
+      <h1 class="page-title">Writing Assessment Reports</h1>
+    </header>
+
+    <nav aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#why-assess">Why Do We Assess Students?</a></li>
+        <li><a href="#reports-written">Reports Should Be Written …</a></li>
+        <li><a href="#sections">Sections of the Assessment Report</a></li>
+        <li><a href="#identifying-data">Identifying Data</a></li>
+        <li><a href="#reason-evaluation">Reason for Evaluation</a></li>
+        <li><a href="#background-info">Student Background Information</a></li>
+        <li><a href="#previous-testing">Brief Review of Previous Testing</a></li>
+        <li><a href="#classroom-observations">Classroom Observations</a></li>
+        <li><a href="#tool-selection">Assessment Tool Selection</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#summary">Summary &amp; Conclusions</a></li>
+        <li><a href="#recommendations">Report Recommendations</a></li>
+      </ol>
+    </nav>
+
+    <main id="main-content">
+
+      <!-- ===================== WHY ASSESS ===================== -->
+      <section class="content-section" aria-labelledby="why-assess">
+        <h2 id="why-assess">Why Do We Assess Students?</h2>
+        <ul>
+          <li>To determine eligibility</li>
+          <li>To identify current levels of performance</li>
+          <li>To monitor progress</li>
+          <li>To guide IEPs</li>
+          <li>To inform teaching</li>
+        </ul>
+      </section>
+
+      <!-- ===================== REPORTS SHOULD BE WRITTEN ===================== -->
+      <section class="content-section" aria-labelledby="reports-written">
+        <h2 id="reports-written">Reports Should Be Written …</h2>
+        <ul>
+          <li>In an easy to read format</li>
+          <li>For parents, general education teachers, special education teachers, support personnel, and, when appropriate, students</li>
+        </ul>
+      </section>
+
+      <!-- ===================== SECTIONS ===================== -->
+      <section class="content-section" aria-labelledby="sections">
+        <h2 id="sections">Sections of the Assessment Report</h2>
+        <ol>
+          <li>Identifying Data</li>
+          <li>Reason for Referral</li>
+          <li>Background Information</li>
+          <li>Review of Previous Testing</li>
+          <li>Classroom Observations</li>
+          <li>Tests and Procedures Administered</li>
+          <li>Results</li>
+          <li>Summary and Conclusions</li>
+          <li>Recommendations</li>
+        </ol>
+      </section>
+
+      <!-- ===================== IDENTIFYING DATA ===================== -->
+      <section class="content-section" aria-labelledby="identifying-data">
+        <h2 id="identifying-data">Identifying Data</h2>
+        <p>The identifying data section records key demographic and logistical information about the student and assessment. Include:</p>
+        <ul>
+          <li>Student Name</li>
+          <li>Date of Birth</li>
+          <li>Age</li>
+          <li>Grade</li>
+          <li>Gender</li>
+          <li>School</li>
+          <li>Teacher</li>
+          <li>Examiner</li>
+          <li>Date(s) of Test(s)</li>
+          <li>Date of Report</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Identifying Data">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Identifying Data</h3>
+          <dl class="id-data-grid">
+            <dt>Name:</dt>
+            <dd>Larry Stevens</dd>
+
+            <dt>School:</dt>
+            <dd>H Middle School</dd>
+
+            <dt>Age at time of testing:</dt>
+            <dd>12 years, 11 months</dd>
+
+            <dt>Parents:</dt>
+            <dd>Ms. Stevens</dd>
+
+            <dt>Sex:</dt>
+            <dd>Male</dd>
+
+            <dt>Teacher:</dt>
+            <dd>Ms. Johnson</dd>
+
+            <dt>Date of Birth:</dt>
+            <dd>4/14/96</dd>
+
+            <dt>Referred by:</dt>
+            <dd>Ms. Smith</dd>
+
+            <dt>Grade:</dt>
+            <dd>7-5</dd>
+
+            <dt>Examiner:</dt>
+            <dd>Abby Walters</dd>
+
+            <dt>Date(s) of Test(s):</dt>
+            <dd>1/8/08, 1/12/08, 1/20/09</dd>
+
+            <dt>Date of Report:</dt>
+            <dd>January 20, 2009</dd>
+          </dl>
+        </section>
+      </section>
+
+      <!-- ===================== REASON FOR EVALUATION ===================== -->
+      <section class="content-section" aria-labelledby="reason-evaluation">
+        <h2 id="reason-evaluation">Reason for Evaluation</h2>
+        <ul>
+          <li>Brief overview of why the student is being assessed.</li>
+          <li>Provide specific question(s) that need to be answered (referral questions).</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Reason for Evaluation">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Reason for Evaluation</h3>
+          <p>Larry was referred for this assessment by his student support teacher, Ms. Smith. Larry's academic file revealed that he did not pass any courses during the 2nd Quarter due to incomplete homework and late class assignments. With that, a lack of preparation caused for low quiz and test scores. Ms. Smith wanted more information on Larry's current level of academic performance. Specifically, the questions Ms. Smith asked were:</p>
+          <ul class="referral-questions">
+            <li>What is Larry's present level of performance in mathematics and reading?</li>
+            <li>What progress has Larry made in mathematics since November 2007?</li>
+            <li>How is Larry's behavior in the school environment compared to his male-peers?</li>
+            <li>How will Larry progress with oral reading fluency through the rest of the school year?</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- ===================== BACKGROUND INFO ===================== -->
+      <section class="content-section" aria-labelledby="background-info">
+        <h2 id="background-info">Student Background Information</h2>
+        <ul>
+          <li>Includes medical, educational, and social aspects</li>
+          <li>Value judgments should not be made</li>
+          <li>Includes only relevant information</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Student Background Information">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Student Background Information</h3>
+
+          <h4>Educational History</h4>
+          <p>Larry is 13 years, 11 months of age, and currently is in the 7th grade at H Middle School. He has been receiving special education services since the Winter of 2007 during his sixth grade year. His cumulative school file did not contain information prior to the 2007 testing. His mother stated that Larry struggles with organization, math and reading comprehension.</p>
+
+          <h4>Family History</h4>
+          <p>According to records in his cumulative file, Larry currently lives at home with his family in Spring Hill. His mother reported that Larry is a sweet, loving child that likes to spend time outside of the house playing sports. He has an identical twin sister who also resides in the same house as Larry.</p>
+
+          <h4>Developmental and Medical History</h4>
+          <p>Medical information was requested from the parent in 2007 but was not provided in Larry's record file. Larry's parents report that their biggest concern is his weight. His mother stated that they have tried to put him on a diet a couple of times, but all attempts proven unsuccessful. Records revealed that Larry's vision and hearing was last screened by the school nurse in 2007 and were within normal limits.</p>
+
+          <h4>Social History</h4>
+          <p>Anecdotal records reveal that Larry has a history of positive social interactions with peers and teachers. Larry reports that his interests/hobbies include sports, particularly basketball and football.</p>
+        </section>
+      </section>
+
+      <!-- ===================== PREVIOUS TESTING ===================== -->
+      <section class="content-section" aria-labelledby="previous-testing">
+        <h2 id="previous-testing">Brief Review of Previous Testing</h2>
+        <ul>
+          <li>Name of test(s)</li>
+          <li>Date the test(s) conducted</li>
+          <li>Brief description of assessment</li>
+          <li>Summary of results in table</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Review of Previous Testing">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Review of Previous Testing</h3>
+          <p>Larry had a comprehensive assessment in the Fall of 2007. This assessment took place on November 9 &amp; 16, 2007. Larry was determined eligible for special education services on 12/13/07 during his 6th grade year. He has since been receiving special education services for a specific learning disability in math calculation and reading comprehension.</p>
+
+          <h4>Woodcock-Johnson Tests of Achievement — Third Edition (WJ-III)</h4>
+          <p>The WJ-III provides a comprehensive system for measuring general intellectual ability, specific cognitive abilities, scholastic aptitude, oral language, and academic achievement. The test was normed based on Larry's grade at the time of testing, 6th grade.</p>
+
+          <div class="table-wrapper">
+            <table>
+              <caption>WJ-III Results — Normed at 6th Grade</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Cluster / Subtest</th>
+                  <th scope="col">Standard Score<br><span style="font-weight:normal;">(Mean 100, SD 15)</span></th>
+                  <th scope="col">Percentile Rank</th>
+                  <th scope="col">Age Equivalent</th>
+                  <th scope="col">Grade Equivalent</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total Achievement</td>
+                  <td>81</td>
+                  <td>11</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Broad Reading</td>
+                  <td>83</td>
+                  <td>12</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Broad Math</td>
+                  <td>75</td>
+                  <td>5</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Broad Written Language</td>
+                  <td>87</td>
+                  <td>19</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Academic Skills</td>
+                  <td>83</td>
+                  <td>13</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Academic Fluency</td>
+                  <td>78</td>
+                  <td>7</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Academic Application</td>
+                  <td>82</td>
+                  <td>12</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Basic Reading Skills</td>
+                  <td>89</td>
+                  <td>23</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Reading Comprehension</td>
+                  <td>73</td>
+                  <td>4</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Math Calculation Skills</td>
+                  <td>74</td>
+                  <td>4</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Math Reasoning</td>
+                  <td>80</td>
+                  <td>9</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+                <tr>
+                  <td>Written Expression</td>
+                  <td>90</td>
+                  <td>26</td>
+                  <td>*</td>
+                  <td>*</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5">* Specific information not available</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <p>According to the results from this assessment, Larry's academic skills were in the low range compared to his peers. When compared to others at his age level, his ability to apply written expression skills falls within the average range. His broad reading, basic reading, math reasoning, and broad written language scores are in the low average range. His standard scores are low (compared to same-age peers) in reading comprehension, broad mathematics, and math calculation skills.</p>
+        </section>
+      </section>
+
+      <!-- ===================== CLASSROOM OBSERVATIONS ===================== -->
+      <section class="content-section" aria-labelledby="classroom-observations">
+        <h2 id="classroom-observations">Classroom Observations</h2>
+        <ul>
+          <li>Brief summary of student performance during 3 observations</li>
+          <li>Each observation addresses:
+            <ul>
+              <li>Peer interactions</li>
+              <li>Student strengths and weaknesses</li>
+              <li>Behavior in the classroom</li>
+              <li>Effective/ineffective teaching strategies</li>
+              <li>Environmental considerations</li>
+            </ul>
+          </li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Classroom Observations">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Classroom Observations</h3>
+          <p>Larry was observed on 1/8/09 in his math classroom and on 1/12/09 in the student support service classroom during a quiz. During both observations, Larry appeared to be engaged in instruction and was polite and compliant to teacher instruction. During the observation in the general education math classroom, Larry became distracted during in-class transitions where the task directions were unclear, which caused him to be unprepared for class since the necessary materials were not present.</p>
+          <p>Larry responded well to specific task directions when they were provided. He volunteered to answer teacher questions throughout all observations; however, he spoke very quietly and the teacher had to ask him to speak up and repeat himself three times. He also interacted well with his peers.</p>
+          <p>Throughout both observations, Larry's <strong>strengths</strong> were as follows: Larry engaged in teacher instruction, was compliant and polite, and interacted appropriately with peers.</p>
+          <p>Larry's <strong>weaknesses</strong> were as follows: Larry had problems with in-class transitions, speaking aloud in class, and being prepared with the necessary materials.</p>
+        </section>
+      </section>
+
+      <!-- ===================== ASSESSMENT TOOL SELECTION ===================== -->
+      <section class="content-section" aria-labelledby="tool-selection">
+        <h2 id="tool-selection">Assessment Tool Selection</h2>
+        <ul>
+          <li>Tools fit the purpose of assessment</li>
+          <li>Tools are listed and include Curriculum Based Measurement</li>
+          <li>Rationale provided</li>
+          <li>Appropriate for examiner</li>
+          <li>Appropriate for student</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Assessment Tool Selection">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Assessment Tool Selection</h3>
+          <p>Ms. Smith wanted information on Larry's current performance and progress in the area of reading and math. The examiner selected several math and reading subtests from the Woodcock-Johnson Tests of Achievement — Third Edition (WJ-III). The WJ-III was chosen for administration to gather information on Larry's overall academic performance.</p>
+          <p>Also, Ms. Smith wanted to know how Larry's behavior in the school setting compared to that of his peers. The teacher and student forms of the Social Skills Rating System (SSRS) were chosen for administration for this purpose because it can be filled out quickly and measures social skills, problem behaviors, and perceived academic competence. The parent form was not chosen for completion on this rating scale since his behavior in school as perceived by the teacher and himself was the primary concern during this assessment. This could be completed in the future for additional information if needed.</p>
+          <p>Finally, Larry was given DIBELS probes to measure his progress in oral reading fluency (measure: correct word per minute). Larry's instructional level was determined by using his WJ-III scores and then providing him with a variety of reading probes. His median score was at the frustrational level. Therefore, Larry was given 4th grade oral reading fluency probes to measure the number of words correct per minute.</p>
+        </section>
+      </section>
+
+      <!-- ===================== RESULTS ===================== -->
+      <section class="content-section" aria-labelledby="results">
+        <h2 id="results">Results</h2>
+        <ul>
+          <li>Scores listed in table format</li>
+          <li>Discusses behavior during testing</li>
+          <li>Interprets scores correctly and includes any limitations</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Results">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Results</h3>
+
+          <h4>Social Skills Rating System (SSRS)</h4>
+          <p>Norms based on age 12-11 and Grade 7.5</p>
+
+          <div class="table-wrapper">
+            <table>
+              <caption>SSRS Results — Secondary Male Norms (Mean 100, SD 15)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Rater</th>
+                  <th scope="col">Scale</th>
+                  <th scope="col">Subscale</th>
+                  <th scope="col">Behavior Level</th>
+                  <th scope="col">Standard Score</th>
+                  <th scope="col">Percentile Rank</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="rowgroup" rowspan="7"><strong>Teacher</strong></th>
+                  <th scope="row"><strong>Social Skills</strong></th>
+                  <td>—</td>
+                  <td>Average</td>
+                  <td>84</td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Cooperation</td>
+                  <td>Average</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Assertion</td>
+                  <td>Fewer</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Self Control</td>
+                  <td>Average</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <th scope="row"><strong>Problem Behaviors</strong></th>
+                  <td>—</td>
+                  <td>Average</td>
+                  <td>108</td>
+                  <td>70</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Externalizing</td>
+                  <td>Average</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Internalizing</td>
+                  <td>More</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <th scope="row"><strong>Academic Competence</strong></th>
+                  <td>—</td>
+                  <td>Average</td>
+                  <td>86</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <th scope="rowgroup" rowspan="5"><strong>Student</strong></th>
+                  <th scope="row"><strong>Social Skills</strong></th>
+                  <td>—</td>
+                  <td>Average</td>
+                  <td>112</td>
+                  <td>79</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Cooperation</td>
+                  <td>Average</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Assertion</td>
+                  <td>Average</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Empathy</td>
+                  <td>Average</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Self Control</td>
+                  <td>More</td>
+                  <td>—</td>
+                  <td>—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Ms. Smith completed the teacher form of the SSRS on January 8, 2009. The SSRS-Teacher is a brief questionnaire designed to assess a broad range of socially validated behaviors — behaviors that affect teacher-student relationships, peer acceptance, academic performance, and more. Larry completed the student form of the SSRS on January 12, 2009. Larry rated his own social skills behaviors. The SSRS-Student is a brief questionnaire designed to assess a broad range of socially validated behaviors.</p>
+          <p>Larry's test results were normed based on his grade level and gender at the time of testing, which was secondary male. Standard scores on this test have a mean of 100 and a standard deviation of 15. The behavior levels used to rate each scale and subscale have 3 levels: high, average, and low. The results of both the teacher and student SSRS revealed Larry displays average levels of social skills and slightly below average levels of assertion when compared to other secondary-aged boys. This corresponded to anecdotal evidence and observations gathered by this examiner.</p>
+
+          <h4>Strengths and Weaknesses</h4>
+          <p>According to the results of the SSRS completed by Ms. Smith, Larry shows strengths on the Problem Behavior scale where he earned a standard score of 108, which placed him in the 70th percentile among secondary students. He also displayed average levels of Academic Competence and earned a standard score of 86 on this scale, which placed him in the 18th percentile among secondary students. He earned the lowest score on the Social Skills scale where he earned a standard score of 84, which placed him in the 14th percentile among secondary students. This corresponds to the student observation and Ms. Smith's report, stating that he struggles to assert and advocate for himself.</p>
+        </section>
+      </section>
+
+      <!-- ===================== SUMMARY & CONCLUSIONS ===================== -->
+      <section class="content-section" aria-labelledby="summary">
+        <h2 id="summary">Summary &amp; Conclusions</h2>
+        <ul>
+          <li>Brief</li>
+          <li>Establishes relationships across assessment tools/other information</li>
+          <li>Summarizes skill/ability strength</li>
+          <li>Summarizes skill/ability deficits</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Summary and Conclusions">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Summary &amp; Conclusions</h3>
+          <p>Larry was a very enjoyable student to work with during these assessments. He gave his best effort and had a positive attitude throughout the assessment. According to the recent assessment he has shown the greatest improvement in his behavioral ratings. The recent SSRS scores displayed that his level of social skills has increased considerably since his last assessment. With that, he has made minimal academic progress.</p>
+          <p>Larry's areas of strength were in his ability to demonstrate his knowledge verbally. His story recall score was his highest score, with a standard score of 99 and in the 48th percentile rank, which means he scored better than 58% of his same-aged peers.</p>
+          <p>Larry's scores in reading were very low; however, there does appear to be some growth in his reading ability as measured by his previous WJ-III reading scores. Given his low scores on the WJ-III, it is not surprising that Larry was determined to be at the frustration level as measured by 5th Grade DIBELS reading probes. Administering these probes will not only help to increase his fluency but will also build Larry's confidence when reading. As he continues to practice reading and as his decoding skills continue to improve, so will his reading fluency.</p>
+        </section>
+      </section>
+
+      <!-- ===================== RECOMMENDATIONS ===================== -->
+      <section class="content-section" aria-labelledby="recommendations">
+        <h2 id="recommendations">Report Recommendations</h2>
+        <ul>
+          <li>Suggest goals</li>
+          <li>Goals should meet stated deficits</li>
+          <li>Makes suggestions for classroom changes</li>
+          <li>Clear and sufficient to develop IEP</li>
+          <li>Ongoing assessment plan</li>
+        </ul>
+
+        <section class="sample-report" aria-label="Sample report: Recommendations">
+          <span class="sample-report-label" aria-hidden="true">Sample Report</span>
+          <h3>Sample Report: Recommendations</h3>
+          <p><em>Walters Assessment Report</em></p>
+
+          <h4>Teacher Recommendations</h4>
+          <ul>
+            <li>Provide Larry with concise oral instructions and directions.</li>
+            <li>After directions or instruction, probe Larry for understanding.</li>
+            <li>Provide Larry with additional opportunities to respond.</li>
+            <li>Read test directions and questions orally to Larry.</li>
+            <li>Provide Larry with a peer buddy who could assist him in class.</li>
+            <li>Due to Larry's short attention span, his work could be "chunked" into smaller segments.</li>
+            <li>Provide basic math fact instruction and drills.</li>
+            <li>Teach Larry clues on how to use the appropriate operational signs in math.</li>
+            <li>Larry appears to be motivated by both teacher and peer praise; it would benefit him to receive a high level of verbal and sensory (e.g., high fives) praise when he is on task and completing work.</li>
+            <li>Encourage Larry to read aloud to adults. This will continue to build his reading confidence.</li>
+            <li>Continue to use repeated curriculum-based measurement to gauge Larry's academic (reading and math) performance and growth.</li>
+          </ul>
+
+          <h4>Parent Recommendations</h4>
+          <ul>
+            <li>Encourage Larry to read aloud at home for 20–30 minutes a night. This will continue to build his reading confidence and interest.</li>
+            <li>Talk to Larry about what he read. Discussing a book or story will help Larry better understand what he read and why he read it.</li>
+            <li>Help him learn basic addition and subtraction facts for 5 minutes daily.</li>
+          </ul>
+
+          <h4>Student Recommendations</h4>
+          <ul>
+            <li>Larry should use his planner daily to keep track of homework and class assignments.</li>
+            <li>Larry should ask a peer or adult for help if he has a question or concern.</li>
+            <li>If directions are unclear, Larry should ask the teacher or parent to clarify them.</li>
+            <li>Larry should try to speak up in class so that everyone can hear him.</li>
+            <li>Larry should try to read for 20–30 minutes per night.</li>
+          </ul>
+        </section>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
