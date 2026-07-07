@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Professional Resume — Career &amp; Corporate Connections Workshop</title>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --bg:#000000;
+    --fg:#ffffff;
+    --accent:#ffff00;
+    --link:#7EC8FF;
+    --box-a:#16213e;
+    --box-b:#1f3a5f;
+    --box-c:#134e4a;
+    --box-d:#3b2a52;
+    --box-e:#2a2a2a;
+    --box-f:#4a3b12;
+    --border-blue:#7EC8FF;
+    --border-yellow:#ffff00;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--fg);
+  }
+
+  body{
+    font-family:'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height:1.5;
+    font-size:1.05rem;
+  }
+
+  img{max-width:100%;height:auto;display:block;}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{
+    position:absolute;
+    left:-9999px;
+    top:0;
+    background:var(--accent);
+    color:#000;
+    padding:.75em 1.25em;
+    font-weight:700;
+    z-index:1000;
+    border-radius:0 0 6px 0;
+    text-decoration:none;
+  }
+  .skip-link:focus{
+    left:0;
+  }
+
+  /* ---------- Visually hidden ---------- */
+  .sr-only{
+    position:absolute;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+
+  /* ---------- Header / h1 ---------- */
+  .site-header{
+    text-align:center;
+    padding:2rem 1rem 1rem;
+    border-bottom:3px solid var(--border-blue);
+  }
+  .site-header h1{
+    color:var(--accent);
+    font-size:2.1rem;
+    margin:0 0 .35em;
+    letter-spacing:.02em;
+  }
+  .site-header p{
+    margin:0;
+    color:var(--fg);
+    font-size:1.05rem;
+  }
+
+  /* ---------- Layout ---------- */
+  main{
+    max-width:980px;
+    margin:0 auto;
+    padding:0 1rem 2rem;
+  }
+
+  /* ---------- Nav controls ---------- */
+  .nav-controls{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    flex-wrap:wrap;
+    padding:1rem 0;
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,.96);
+    z-index:100;
+    border-bottom:1px solid #333;
+  }
+  .no-js .nav-controls{display:none;}
+
+  .nav-btn{
+    background:var(--box-a);
+    color:var(--fg);
+    border:2px solid var(--border-blue);
+    padding:.6em 1.2em;
+    font-size:1rem;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+  }
+  .nav-btn:hover:not(:disabled){
+    background:var(--box-b);
+  }
+  .nav-btn:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+  }
+  .slide-counter{
+    min-width:14em;
+    text-align:center;
+    font-weight:600;
+    color:var(--accent);
+  }
+
+  :focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:2px;
+  }
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--accent);
+    outline-offset:2px;
+  }
+
+  /* ---------- Slideshow ---------- */
+  .slideshow{
+    margin-top:1rem;
+  }
+
+  .slide{
+    border:1px solid #2b2b2b;
+    border-radius:10px;
+    padding:2rem 1.75rem 1.5rem;
+    margin-bottom:2.5rem;
+    background:#050505;
+  }
+  .js .slide{
+    display:none;
+  }
+  .js .slide.active{
+    display:block;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .js .slide.active{
+      animation:fadein .25s ease-in;
+    }
+  }
+  @keyframes fadein{
+    from{opacity:0;}
+    to{opacity:1;}
+  }
+
+  .slide h2{
+    color:var(--accent);
+    font-size:1.7rem;
+    border-bottom:2px solid var(--border-blue);
+    padding-bottom:.3em;
+    margin-top:0;
+  }
+  .slide h3{
+    color:var(--fg);
+    font-size:1.2rem;
+    margin-bottom:.4em;
+  }
+  .slide p{margin:.6em 0;}
+  .slide ul, .slide ol{
+    margin:.6em 0;
+    padding-left:1.4em;
+  }
+  .slide li{margin-bottom:.4em;}
+
+  a{color:var(--link);}
+  a:visited{color:var(--link);}
+  a:hover, a:focus{text-decoration-thickness:2px;}
+
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.85rem;
+    color:var(--accent);
+    font-weight:700;
+    margin:0 0 .5em;
+  }
+
+  /* ---------- Title slide ---------- */
+  .title-slide{text-align:center;}
+  .title-slide .hero-photo{
+    max-width:280px;
+    margin:1.25rem auto;
+    border:3px solid var(--border-blue);
+    border-radius:8px;
+  }
+  .title-slide .deck-org{
+    font-size:1.3rem;
+    letter-spacing:.05em;
+    margin-top:1rem;
+  }
+
+  /* ---------- Generic box grid ---------- */
+  .box-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+    gap:.9rem;
+    margin:1.25rem 0;
+    list-style:none;
+    padding:0;
+  }
+  .box{
+    border:2px solid var(--border-blue);
+    border-radius:8px;
+    padding:1em;
+    font-weight:600;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .box-a{background:var(--box-a);}
+  .box-b{background:var(--box-b);}
+  .box-c{background:var(--box-c);}
+  .box-d{background:var(--box-d);}
+  .box-e{background:var(--box-e);}
+  .box-f{background:var(--box-f); border-color:var(--border-yellow);}
+
+  /* stacked/list boxes (Overview, Components, Final Thoughts) */
+  .stack-list{
+    list-style:none;
+    margin:1.25rem 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+  }
+  .stack-list li{
+    border:2px solid var(--border-blue);
+    border-radius:8px;
+    padding:.75em 1em;
+    font-size:1.1rem;
+    font-weight:600;
+  }
+  .stack-list.numbered{counter-reset:stacknum;}
+  .stack-list.numbered li{counter-increment:stacknum;}
+  .stack-list.numbered li::before{
+    content:counter(stacknum) ". ";
+    color:var(--accent);
+  }
+
+  /* ---------- Two column ---------- */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+    margin:1.25rem 0;
+  }
+  @media (max-width:640px){
+    .two-col{grid-template-columns:1fr;}
+  }
+  .col-box{
+    border:2px solid var(--border-blue);
+    border-radius:8px;
+    padding:1em;
+    background:var(--box-a);
+  }
+  .col-box h3{text-align:center;}
+  .col-box dl{margin:0;}
+  .col-box dt{font-weight:700; margin-top:.5em;}
+  .col-box dd{margin:0 0 0 0; padding-left:1em;}
+
+  /* ---------- Resume mockups (styled to look like a physical page) ---------- */
+  figure.resume-mock{
+    margin:1.25rem 0;
+    border:3px solid var(--border-blue);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .resume-mock .paper{
+    background:#f7f7f2;
+    color:#111;
+    padding:1.5rem;
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:.92rem;
+  }
+  .resume-mock .paper h3.name{
+    text-align:center;
+    font-size:1.5rem;
+    margin:0 0 .3em;
+    font-family:Georgia, serif;
+    color:#111;
+  }
+  .resume-mock .contact-row{
+    display:flex;
+    justify-content:space-between;
+    gap:1em;
+    flex-wrap:wrap;
+    font-size:.85rem;
+    border-bottom:1px solid #333;
+    padding-bottom:.5em;
+    margin-bottom:.75em;
+  }
+  .resume-mock .highlight{
+    background:#fff6c2;
+    outline:2px solid #c0392b;
+    outline-offset:2px;
+    padding:.15em .3em;
+  }
+  .resume-mock section.rblock{margin-bottom:.85em;}
+  .resume-mock h4.rheading{
+    text-transform:uppercase;
+    font-size:.85rem;
+    border-bottom:1px solid #333;
+    margin:0 0 .3em;
+    letter-spacing:.04em;
+  }
+  .resume-mock .rmeta{
+    display:flex;
+    justify-content:space-between;
+    font-style:italic;
+    font-size:.85rem;
+  }
+  .resume-mock ul{margin:.2em 0 .5em; padding-left:1.2em; font-size:.88rem;}
+  .resume-mock figcaption{
+    background:var(--box-a);
+    color:var(--fg);
+    padding:.6em 1em;
+    font-weight:600;
+    border-top:2px solid var(--border-blue);
+  }
+  .resume-mock .funky-name{
+    font-family:'Comic Sans MS', 'Brush Script MT', cursive;
+    color:#3a6023;
+    font-size:2rem;
+    text-align:center;
+  }
+
+  /* ---------- Diagram: purpose funnel ---------- */
+  .funnel-wrap{
+    position:relative;
+    margin:2rem 0 1rem;
+    padding-top:2.5rem;
+  }
+  .speech-bubble{
+    position:relative;
+    max-width:320px;
+    margin:0 0 2rem auto;
+    background:var(--box-b);
+    border:2px solid var(--border-blue);
+    border-radius:16px;
+    padding:1em 1.2em;
+    text-align:center;
+    font-weight:600;
+  }
+  .speech-bubble::after{
+    content:"";
+    position:absolute;
+    bottom:-16px;
+    left:2.5em;
+    border-width:16px 12px 0 0;
+    border-style:solid;
+    border-color:var(--border-blue) transparent transparent transparent;
+  }
+  .funnel-steps{
+    display:flex;
+    gap:0;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .funnel-steps li{
+    flex:1;
+    background:var(--box-a);
+    border:2px solid var(--border-blue);
+    text-align:center;
+    font-weight:700;
+    font-size:1.15rem;
+    padding:1.3em .5em;
+    position:relative;
+    margin-right:1.6em;
+    clip-path:polygon(0 0, 82% 0, 100% 50%, 82% 100%, 0 100%);
+  }
+  .funnel-steps li:last-child{
+    margin-right:0;
+    clip-path:none;
+    border-radius:8px;
+  }
+  .funnel-steps li:not(:last-child){padding-right:1.4em;}
+
+  /* ---------- Diagram: converge (objective) ---------- */
+  .converge-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:1.5rem 0;
+  }
+  .converge-top{
+    display:flex;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-bottom:.5rem;
+  }
+  .converge-top .box{
+    min-width:120px;
+  }
+  .converge-arrow{
+    font-size:1.8rem;
+    color:var(--border-blue);
+    line-height:1;
+    margin:.2em 0;
+  }
+  .converge-center{
+    border:2px solid var(--border-yellow);
+    background:var(--box-f);
+    border-radius:50%;
+    width:150px;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    font-size:1.2rem;
+    text-align:center;
+  }
+  .objective-example{
+    margin-top:1.5rem;
+    background:var(--box-b);
+    border:2px solid var(--border-blue);
+    border-radius:8px;
+    padding:1em 1.25em;
+    font-size:1.15rem;
+    font-weight:600;
+  }
+
+  /* ---------- Quadrant diagram ---------- */
+  .quadrant{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:2px;
+    max-width:480px;
+    margin:1.5rem auto;
+    border:2px solid var(--border-blue);
+    border-radius:8px;
+    overflow:hidden;
+    position:relative;
+    background:var(--border-blue);
+  }
+  .quadrant .qcell{
+    background:var(--box-a);
+    padding:2.2em 1em;
+    text-align:center;
+    font-weight:700;
+    font-size:1.15rem;
+  }
+  .quadrant-center{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    background:var(--box-f);
+    border:2px solid var(--border-yellow);
+    border-radius:8px;
+    padding:.7em 1em;
+    font-weight:700;
+    text-align:center;
+    white-space:nowrap;
+  }
+
+  /* ---------- Star callout ---------- */
+  .star-callout{
+    background:var(--box-b);
+    border:2px solid var(--border-yellow);
+    border-radius:8px;
+    padding:.9em 1.3em;
+    font-weight:700;
+    text-align:center;
+    max-width:220px;
+    margin:0 0 1.5rem auto;
+    font-size:1.1rem;
+  }
+
+  /* ---------- Venn diagram ---------- */
+  .venn-wrap{
+    position:relative;
+    max-width:420px;
+    margin:2rem auto 1rem;
+    height:300px;
+  }
+  .venn-circle{
+    position:absolute;
+    width:230px;height:230px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-weight:700;
+    padding:1em;
+    border:2px solid var(--border-blue);
+    mix-blend-mode:normal;
+    opacity:.92;
+  }
+  .venn-a{background:var(--box-b); top:0; left:95px;}
+  .venn-b{background:var(--box-c); top:110px; left:10px;}
+  .venn-c{background:var(--box-d); top:110px; left:180px;}
+
+  /* ---------- Callout stat box ---------- */
+  .stat-callout{
+    background:var(--box-f);
+    border:2px solid var(--border-yellow);
+    border-radius:10px;
+    padding:1em 1.3em;
+    font-weight:700;
+    text-align:center;
+    max-width:280px;
+    margin:0 0 1.5rem auto;
+  }
+  .source-note{
+    font-size:.85rem;
+    color:#cfcfcf;
+    margin-top:1rem;
+  }
+
+  /* ---------- Skills grid ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+    gap:.6rem;
+    list-style:none;
+    margin:1rem 0;
+    padding:0;
+  }
+  .skills-grid li{
+    border:1px solid var(--border-blue);
+    border-radius:6px;
+    padding:.65em .5em;
+    text-align:center;
+    font-size:.92rem;
+    background:var(--box-a);
+  }
+
+  /* ---------- Steps (additional assistance) ---------- */
+  .steps-photo-wrap{
+    display:flex;
+    gap:1.5rem;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .steps-photo-wrap img{
+    max-width:190px;
+    border:3px solid var(--border-blue);
+    border-radius:8px;
+  }
+  .steps-list{
+    flex:1;
+    min-width:220px;
+  }
+  .steps-list li{
+    margin-bottom:.75em;
+  }
+
+  /* ---------- Sample experience block (real text, not image) ---------- */
+  .experience-block{
+    border:2px solid var(--border-blue);
+    border-radius:8px;
+    padding:1.25em 1.4em;
+    background:#0c0c0c;
+    margin:1rem 0;
+  }
+  .experience-block h3{
+    color:var(--accent);
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    border-bottom:1px solid #444;
+    padding-bottom:.3em;
+  }
+  .experience-block .role-meta{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:.5em;
+    font-style:italic;
+    margin:.4em 0;
+  }
+  .experience-block ul{margin-top:.3em;}
+
+  /* ---------- Marketing sample title band ---------- */
+  .sample-band{
+    display:flex;
+    gap:0;
+    flex-wrap:wrap;
+    border:3px solid var(--border-blue);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .sample-band .band-title{
+    background:var(--box-b);
+    color:var(--fg);
+    padding:2rem 1.5rem;
+    flex:0 0 220px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .sample-band .band-title h3{
+    font-size:1.8rem;
+    margin:0 0 .2em;
+    color:var(--accent);
+  }
+  .sample-band .band-body{
+    flex:1;
+    min-width:260px;
+  }
+  .sample-band .band-body .paper{border:none;}
+
+  /* ---------- Tips list ---------- */
+  .tips-list{list-style:none; padding:0;}
+  .tips-list li{
+    position:relative;
+    padding-left:1.8em;
+    margin-bottom:.6em;
+  }
+  .tips-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  /* ---------- Footer ---------- */
+  .deck-footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    flex-wrap:wrap;
+    padding:1.5rem 1rem 2rem;
+    border-top:3px solid var(--border-blue);
+    margin-top:1rem;
+  }
+  .deck-footer img{
+    max-width:150px;
+    background:#fff;
+    padding:4px;
+    border-radius:4px;
+  }
+  .deck-footer p{
+    margin:0;
+    font-weight:600;
+  }
+
+  /* ---------- Icons (decorative, inline SVG) ---------- */
+  .contact-icons{list-style:none; padding:0; margin:1rem 0; display:flex; flex-direction:column; gap:.9rem;}
+  .contact-icons li{display:flex; align-items:center; gap:.75em;}
+  .contact-icons .icon{
+    flex:0 0 40px;
+    width:40px;height:40px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--box-a);
+    border:2px solid var(--border-blue);
+  }
+  .contact-icons .icon svg{width:22px;height:22px;fill:var(--fg);}
+
+  address{font-style:normal;}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <p class="eyebrow">Career &amp; Corporate Connections Resume Workshop</p>
+  <p>Use the Next / Previous buttons or your keyboard's arrow keys to move through the slides. Without JavaScript, every slide is shown in one continuous page.</p>
+</header>
+
+<main id="main">
+
+  <div class="nav-controls" id="nav-controls">
+    <button type="button" class="nav-btn" id="prev-btn" aria-label="Previous slide">&#8592; Previous</button>
+    <p class="slide-counter" id="slide-counter" aria-live="polite">Slide 1 of 24: The Professional Resume</p>
+    <button type="button" class="nav-btn" id="next-btn" aria-label="Next slide">Next &#8594;</button>
+  </div>
+
+  <div class="slideshow" id="slideshow">
+
+    <!-- SLIDE 1 -->
+    <section class="slide active title-slide" id="slide-1" role="group" aria-roledescription="slide" aria-labelledby="slide-1-heading">
+      <h1 id="slide-1-heading">The Professional Resume</h1>
+      <img class="hero-photo" src="/images/accessibility-demo/image-02.jpg" alt="Photograph of the Nittany Lion mascot in a full bear costume standing beside a tall pull-up banner. The banner reads &quot;Career &amp; Corporate Connections&quot; above four small photos of students and recruiters talking, with the Smeal College of Business shield logo at the bottom.">
+      <p class="deck-org">CAREER &amp; CORPORATE CONNECTIONS</p>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide" id="slide-2" role="group" aria-roledescription="slide" aria-labelledby="slide-2-heading">
+      <h2 id="slide-2-heading">Overview</h2>
+      <ol class="stack-list numbered" aria-label="Topics covered in this workshop">
+        <li class="box-b">Purpose</li>
+        <li class="box-a">Formats</li>
+        <li class="box-b">Components</li>
+        <li class="box-a">Samples</li>
+      </ol>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section class="slide" id="slide-3" role="group" aria-roledescription="slide" aria-labelledby="slide-3-heading">
+      <h2 id="slide-3-heading">Purpose</h2>
+      <div class="funnel-wrap">
+        <div class="speech-bubble">How long will a recruiter typically look at your resume?</div>
+        <ol class="funnel-steps" aria-label="The three stages a resume moves a candidate through">
+          <li class="box-a">Resume</li>
+          <li class="box-a">Interview</li>
+          <li class="box-a">Job Offer</li>
+        </ol>
+      </div>
+      <p>A strong resume exists to move you from application to interview to job offer — recruiters often spend only seconds on a first read, so every section needs to earn its place.</p>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section class="slide" id="slide-4" role="group" aria-roledescription="slide" aria-labelledby="slide-4-heading">
+      <h2 id="slide-4-heading">Sample Resume for Discussion</h2>
+      <p>Review this example resume and think about what could be strengthened using the guidance in this workshop.</p>
+      <figure class="resume-mock">
+        <div class="paper">
+          <h3 class="funky-name">Sarah Green</h3>
+          <section class="rblock">
+            <h4 class="rheading">Objective</h4>
+            <p>To get a good internship in Supply Chain so that I can learn more and excel in the major</p>
+          </section>
+          <section class="rblock">
+            <h4 class="rheading">Skills</h4>
+            <ul>
+              <li>Good listener</li>
+              <li>Fast learner</li>
+              <li>Personable</li>
+              <li>Have taken two classes in Spanish</li>
+              <li>Proficient in Microsoft Word, PowerPoint, and Excel</li>
+            </ul>
+          </section>
+          <section class="rblock">
+            <h4 class="rheading">Education</h4>
+            <p>2016 – B.S. with a major in Supply Chain and minor in Performance Arts<br>Penn State, PA<br>GPA 3.6</p>
+          </section>
+          <section class="rblock">
+            <h4 class="rheading">Experience</h4>
+            <p><strong>McLanahan's, Setpember 2012–2014</strong></p>
+            <ul>
+              <li>Working at the cash register and answering questions when needed</li>
+              <li>Regularly stock shelves and make sandwiches</li>
+            </ul>
+            <p><strong>Abercrombie and Fitch, Cashier</strong></p>
+            <ul>
+              <li>12 hours a week</li>
+              <li>Always did what my manager asked of me and performed excellently</li>
+            </ul>
+            <p><strong>Women in Business</strong></p>
+            <ul>
+              <li>Attended one meeting in September</li>
+            </ul>
+          </section>
+          <section class="rblock">
+            <h4 class="rheading">Hobbies</h4>
+            <p>Skiing, hiking, cooking, and karate</p>
+          </section>
+        </div>
+        <figcaption>Sample resume text, transcribed exactly as written (including its original misspelling of "September") so it can be discussed and critiqued.</figcaption>
+      </figure>
+    </section>
+
+    <!-- SLIDE 5 -->
+    <section class="slide" id="slide-5" role="group" aria-roledescription="slide" aria-labelledby="slide-5-heading">
+      <h2 id="slide-5-heading">Formats</h2>
+      <div class="two-col">
+        <div class="col-box">
+          <h3>Indent</h3>
+          <dl>
+            <dt>Objective:</dt><dd>To obtain a position…</dd>
+            <dt>Education:</dt><dd>The Pennsylvania State University, Smeal College of Business, B.S. in Finance</dd>
+            <dt>Experience:</dt><dd>Intern</dd>
+          </dl>
+        </div>
+        <div class="col-box">
+          <h3>Table</h3>
+          <dl>
+            <dt>Objective:</dt><dd>To obtain a position…</dd>
+            <dt>Education:</dt><dd>The Pennsylvania State University, Smeal College of Business, B.S. in Marketing</dd>
+            <dt>Experience:</dt><dd>Intern</dd>
+          </dl>
+        </div>
+      </div>
+      <ul class="tips-list">
+        <li>One page</li>
+        <li>Margins: 0.5" – 1.0"</li>
+        <li>Font: Between 10pt – 12pt</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 6 -->
+    <section class="slide" id="slide-6" role="group" aria-roledescription="slide" aria-labelledby="slide-6-heading">
+      <h2 id="slide-6-heading">Resume Components</h2>
+      <ol class="stack-list numbered">
+        <li class="box-b">Contact Information</li>
+        <li class="box-a">Objective?</li>
+        <li class="box-b">Education</li>
+        <li class="box-c">Related Experience</li>
+        <li class="box-d">Leadership &amp; Activities</li>
+        <li class="box-b">Skills</li>
+        <li class="box-a">Honors/Awards</li>
+      </ol>
+      <p><em>References available upon request?</em> — optional, and covered later in this workshop.</p>
+    </section>
+
+    <!-- SLIDE 7 -->
+    <section class="slide" id="slide-7" role="group" aria-roledescription="slide" aria-labelledby="slide-7-heading">
+      <h2 id="slide-7-heading">Contact Information</h2>
+      <figure class="resume-mock">
+        <div class="paper">
+          <div class="contact-row highlight">
+            <div>
+              <strong>Current Address:</strong><br>
+              900 Student Ave, Apt 1<br>
+              State College, PA 16801
+            </div>
+            <div style="text-align:center;">
+              <h3 class="name">Frank Finance</h3>
+              <p>Email: student@psu.edu<br>Mobile: 215.123.5555</p>
+            </div>
+            <div style="text-align:right;">
+              <strong>Permanent Address:</strong><br>
+              300 Home Street, Apt 2<br>
+              Philadelphia, PA 19123
+            </div>
+          </div>
+          <section class="rblock">
+            <h4 class="rheading">Education</h4>
+            <div class="rmeta"><span>The Pennsylvania State University, Smeal College of Business</span><span>University Park, PA</span></div>
+            <div class="rmeta"><span>Bachelor of Science in Finance</span><span>Class of May 2011, GPA: 3.93/4.00</span></div>
+          </section>
+        </div>
+        <figcaption>Sample resume header from "Frank Finance," with the contact information block highlighted in red as the example being discussed.</figcaption>
+      </figure>
+    </section>
+
+    <!-- SLIDE 8 -->
+    <section class="slide" id="slide-8" role="group" aria-roledescription="slide" aria-labelledby="slide-8-heading">
+      <h2 id="slide-8-heading">Objective</h2>
+      <div class="converge-wrap">
+        <div class="converge-top">
+          <div class="box box-b">Focused</div>
+          <div class="box box-c">Concise</div>
+          <div class="box box-d">Tailored</div>
+        </div>
+        <div class="converge-arrow" aria-hidden="true">&#8595;</div>
+        <div class="converge-center">Objective</div>
+      </div>
+      <p class="objective-example">Example: "To obtain a summer 2017 internship in marketing and sales"</p>
+    </section>
+
+    <!-- SLIDE 9 -->
+    <section class="slide" id="slide-9" role="group" aria-roledescription="slide" aria-labelledby="slide-9-heading">
+      <h2 id="slide-9-heading">Education</h2>
+      <div class="col-box" style="margin-bottom:1rem;">
+        <h3>School / Location</h3>
+        <ul>
+          <li>Degree / Expected Graduation Date</li>
+          <li>GPA</li>
+          <li>Honors</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h3>Study Abroad Experience</h3>
+        <p>Include location, program, and dates if applicable.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 10 -->
+    <section class="slide" id="slide-10" role="group" aria-roledescription="slide" aria-labelledby="slide-10-heading">
+      <h2 id="slide-10-heading">Education Example</h2>
+      <figure class="resume-mock">
+        <div class="paper">
+          <div class="contact-row">
+            <div>900 Student Ave, Apt 1<br>State College, PA 16801</div>
+            <div style="text-align:center;"><h3 class="name">Frank Finance</h3><p>student@psu.edu &nbsp;|&nbsp; 215.123.5555</p></div>
+            <div style="text-align:right;">300 Home Street, Apt 2<br>Philadelphia, PA 19123</div>
+          </div>
+          <section class="rblock">
+            <h4 class="rheading highlight">Education</h4>
+            <div class="rmeta"><span>The Pennsylvania State University, Smeal College of Business</span><span>University Park, PA</span></div>
+            <div class="rmeta"><span>Bachelor of Science in Finance</span><span>Class of May 2011, GPA: 3.93/4.00</span></div>
+          </section>
+          <section class="rblock">
+            <h4 class="rheading">Relevant Experience</h4>
+            <div class="rmeta"><span><strong>Convergent Wealth Advisors</strong>, Intern, Advisor Group</span><span>Rockville, MD — June–Aug 2009</span></div>
+            <ul>
+              <li>Assisted with the creation of a new High Net Worth segment to complement the firm's current Ultra-High Net Worth and Institutional businesses, targeting clients with investable assets of under $5 million</li>
+              <li>Prepared a break-even analysis to help a client decide when to begin taking payments in his Defined Benefit Plan, utilizing actuarial tables and expected returns based on planned asset allocation</li>
+              <li>Designed a dollar-cost-averaging template, automatically adjusting each month's contributions based on market index movements, used throughout the entire High Net Worth group, representing over $300 million in client assets</li>
+              <li>Created various asset allocation tables and investment matrices for clients, finding the most efficient ways to invest several million dollars across various securities and alternative investment vehicles</li>
+            </ul>
+            <div class="rmeta"><span><strong>Nittany Lion Fund, LLC.</strong>, Fund Manager, Consumer Discretionary Sector</span><span>University Park, PA — Aug 2008–Present</span></div>
+            <ul>
+              <li>Managed $230,000 of a $3.8 million student-managed portfolio, achieving an out-performance of 28.37% relative to the Consumer Discretionary S&amp;P sector index</li>
+              <li>Allocated funds into Consumer Discretionary stocks after extensive qualitative and quantitative analysis, including public comparables and discounted cash flow valuation</li>
+              <li>Created pitches to explain investment thesis, company analysis, and overall valuation to fellow fund managers</li>
+            </ul>
+          </section>
+        </div>
+        <figcaption>Sample resume from "Frank Finance," with the Education section highlighted in red as the example being discussed.</figcaption>
+      </figure>
+    </section>
+
+    <!-- SLIDE 11 -->
+    <section class="slide" id="slide-11" role="group" aria-roledescription="slide" aria-labelledby="slide-11-heading">
+      <h2 id="slide-11-heading">Experience Section</h2>
+      <p class="star-callout">&#9733; Lead with your POWER!</p>
+      <h3>Valued Experiences by Employers</h3>
+      <ul class="box-grid">
+        <li class="box box-b">Related Experience</li>
+        <li class="box box-b">Research Experience</li>
+        <li class="box box-b">Leadership Experience</li>
+        <li class="box box-a">Non-related Work Experience</li>
+        <li class="box box-a">Community Involvement</li>
+        <li class="box box-a">Membership to Academic/Professional Organizations</li>
+        <li class="box box-e">Class Projects</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 12 -->
+    <section class="slide" id="slide-12" role="group" aria-roledescription="slide" aria-labelledby="slide-12-heading">
+      <h2 id="slide-12-heading">Skills Desired By Employers</h2>
+      <p class="stat-callout">72.5% of recruiters prefer students with relevant experience</p>
+      <ul class="skills-grid">
+        <li>Leadership</li>
+        <li>Ability to work in a team</li>
+        <li>Communication skills</li>
+        <li>Problem-solving skills</li>
+        <li>Strong work ethic</li>
+        <li>Analytical/quantitative skills</li>
+        <li>Technical skills</li>
+        <li>Initiative</li>
+        <li>Computer skills</li>
+        <li>Flexibility/adaptability</li>
+        <li>Interpersonal skills</li>
+        <li>Detail-oriented</li>
+        <li>Organizational ability</li>
+        <li>Strategic planning skills</li>
+        <li>Friendly/outgoing personality</li>
+        <li>Entrepreneurial skills/risk taker</li>
+        <li>3.0+ GPA (many look for higher)</li>
+        <li>Global experience</li>
+      </ul>
+      <p class="source-note">Source: NACE Job Outlook Survey, 2015</p>
+    </section>
+
+    <!-- SLIDE 13 -->
+    <section class="slide" id="slide-13" role="group" aria-roledescription="slide" aria-labelledby="slide-13-heading">
+      <h2 id="slide-13-heading">Bullet Points: Strong Action Verbs</h2>
+      <div class="quadrant" aria-label="Four example strong action verbs surrounding the phrase Strong Action Verbs">
+        <div class="qcell">Supervised</div>
+        <div class="qcell">Mentored</div>
+        <div class="qcell">Managed</div>
+        <div class="qcell">Organized</div>
+        <div class="quadrant-center">Strong<br>Action Verbs</div>
+      </div>
+    </section>
+
+    <!-- SLIDE 14 -->
+    <section class="slide" id="slide-14" role="group" aria-roledescription="slide" aria-labelledby="slide-14-heading">
+      <h2 id="slide-14-heading">Bullet Points: Quantify, Qualify, Buzzwords</h2>
+      <div class="two-col" style="grid-template-columns:1fr;">
+        <div class="col-box">
+          <h3>Quantify</h3>
+          <p>Raised more than <strong>$137,000</strong> for pediatric cancer for THON while <strong>placing 3rd</strong> in Greek Life community</p>
+        </div>
+        <div class="col-box">
+          <h3>Qualify</h3>
+          <p>Presented a <strong>Financial Literacy workshop</strong> through the Penn State Finance Society to first-year students</p>
+        </div>
+        <div class="col-box">
+          <h3>Use industry-specific buzzwords</h3>
+          <p>Marketing: <strong>Analyzed target market characteristics</strong> and implemented innovative sales strategies which increased client business by 6.1%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 15 -->
+    <section class="slide" id="slide-15" role="group" aria-roledescription="slide" aria-labelledby="slide-15-heading">
+      <h2 id="slide-15-heading">Sample Experience Section</h2>
+      <div class="experience-block">
+        <h3>Related Experience</h3>
+        <div class="role-meta"><span>The Vanguard Group: New York, NY — College-to-Corporate Intern</span><span>May 2015 – August 2015</span></div>
+        <ul>
+          <li>Analyzed work progress data to evaluate 6-week backlog of assignments for 8-member Wealth Transfer Operations team</li>
+          <li>Documented inefficiencies in recorded work items and collaborated with departmental areas contributing to incorrect data entry, which corrected erroneous items</li>
+          <li>Presented suggested improvements for work item process, decreasing inefficiencies by 100%</li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <h3>Leadership Experience</h3>
+        <div class="role-meta"><span>Professional Management Association (PMA), University Park, PA — Corporate Relations Chair</span><span>August 2014 – Present</span></div>
+        <ul>
+          <li>Lead committee of 30 to plan 10 external networking events</li>
+          <li>Improve relations between 20 corporate recruiters, Smeal staff, professors, and members</li>
+          <li>Assist in the organization of the PMA Challenge, an event to unite students and recruiters</li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <h3>Work Experience</h3>
+        <div class="role-meta"><span>Pollock Dining Commons, University Park, PA</span><span>March 2013 – April 2014</span></div>
+        <ul>
+          <li>Maintained sanitary conditions to management standards within the cafeteria area</li>
+          <li>Provided high quality customer service during high volume serving times</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SLIDE 16 -->
+    <section class="slide" id="slide-16" role="group" aria-roledescription="slide" aria-labelledby="slide-16-heading">
+      <h2 id="slide-16-heading">Skills &amp; Honors/Awards</h2>
+      <h3>Skills</h3>
+      <ul class="box-grid">
+        <li class="box box-a">Computer Skills</li>
+        <li class="box box-b">Foreign Languages</li>
+        <li class="box box-c">Other</li>
+      </ul>
+      <h3>Honors &amp; Awards</h3>
+      <div class="venn-wrap" role="img" aria-label="Overlapping circle diagram showing three related honors and awards categories: Academic Honors, Scholarship Awards, and Leadership/Service Awards">
+        <div class="venn-circle venn-a" aria-hidden="true">Academic Honors</div>
+        <div class="venn-circle venn-b" aria-hidden="true">Scholarship Awards</div>
+        <div class="venn-circle venn-c" aria-hidden="true">Leadership/Service Awards</div>
+      </div>
+      <ul class="sr-only">
+        <li>Academic Honors</li>
+        <li>Scholarship Awards</li>
+        <li>Leadership/Service Awards</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 17 -->
+    <section class="slide" id="slide-17" role="group" aria-roledescription="slide" aria-labelledby="slide-17-heading">
+      <h2 id="slide-17-heading">References Available Upon Request</h2>
+      <p style="font-size:1.3rem; font-weight:700;">Is that needed on your resume?</p>
+    </section>
+
+    <!-- SLIDE 18 -->
+    <section class="slide" id="slide-18" role="group" aria-roledescription="slide" aria-labelledby="slide-18-heading">
+      <h2 id="slide-18-heading">Overall Tips</h2>
+      <ul class="tips-list">
+        <li>No sentences or periods</li>
+        <li>Use correct verb tense</li>
+        <li>Don't use personal pronouns (I, we, us)</li>
+        <li>Eliminate fillers (a, an, the)</li>
+        <li>Check for misspellings &amp; grammatical errors</li>
+        <li>Avoid using software templates</li>
+        <li>2–6 bullets per experience (with exceptions!)</li>
+        <li>Don't include personal information (like your SSN# or birthdate) or photos</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 19 -->
+    <section class="slide" id="slide-19" role="group" aria-roledescription="slide" aria-labelledby="slide-19-heading">
+      <h2 id="slide-19-heading">Sample Resume: Marketing Student</h2>
+      <div class="sample-band">
+        <div class="band-title">
+          <h3>Sample Resume</h3>
+          <p>Marketing Student</p>
+        </div>
+        <div class="band-body">
+          <figure class="resume-mock" style="margin:0;">
+            <div class="paper">
+              <div class="contact-row">
+                <div>School Address:<br>100 Student St.<br>State College, PA 16801</div>
+                <div style="text-align:center;"><h3 class="name">Danielle Marketing</h3><p>student@psu.edu<br>(978) 400-3444</p></div>
+                <div style="text-align:right;">Permanent Address:<br>355 Home Rd. #305<br>Sudbury, MA 01776</div>
+              </div>
+              <section class="rblock">
+                <h4 class="rheading">Education</h4>
+                <div class="rmeta"><span>The Pennsylvania State University, Smeal College of Business</span><span>University Park, PA</span></div>
+                <p>Bachelor of Science in Marketing — Date of Graduation: May 2017<br>Cumulative GPA: 3.64/4.00 — Dean's List: 3 of 4 Semesters</p>
+              </section>
+              <section class="rblock">
+                <h4 class="rheading">Marketing Experience</h4>
+                <div class="rmeta"><span><strong>Parametric Technology Corporation</strong>, Marketing Intern</span><span>Needham, MA — Summer 2015</span></div>
+                <p>Assisted the VP of Marketing with various projects:</p>
+                <ul>
+                  <li>Coordinated a booth exhibit PTC sponsored for the CIRP 59th General Assembly</li>
+                  <li>Generated a creative brief utilized by colleagues and an advertising agency</li>
+                  <li>Analyzed and reported information derived from competitive intelligence research</li>
+                  <li>Collected, concluded, and reported data regarding customer satisfaction with PTC's e-store</li>
+                </ul>
+                <div class="rmeta"><span><strong>Penn State Intercollegiate Athletics</strong>, Marketing Intern</span><span>University Park, PA — Fall 2014–Present</span></div>
+                <ul>
+                  <li>Assist at athletic events to distribute promotional merchandise and set up raffles and contests during half-time</li>
+                  <li>Promote athletic events in the HUB-Robeson Center to encourage students to attend the games</li>
+                  <li>Worked at Rally In the Valley to get students and Penn State fans energized for the Iowa football game</li>
+                </ul>
+              </section>
+              <section class="rblock">
+                <h4 class="rheading">Campus Activities</h4>
+                <div class="rmeta"><span><strong>The Penn State Marketing Association</strong>, Member, Advertising and Sports Marketing Division</span><span>Fall 2013–Present</span></div>
+                <ul>
+                  <li>Develop advertising strategies to help promote a product for Vegas Fuel</li>
+                  <li>Work in a team to create a marketing proposal to submit to Sazerac</li>
+                  <li>Execute events and activities which will develop brand awareness for Vegas Fuel at Penn State</li>
+                </ul>
+                <div class="rmeta"><span><strong>Phi Chi Theta Business Fraternity</strong>, Member</span><span>Fall 2013–Present</span></div>
+              </section>
+              <section class="rblock">
+                <h4 class="rheading">Additional Work Experience</h4>
+                <div class="rmeta"><span><strong>Elizabeth Lee Boutique</strong>, Retail Sales Associate</span><span>Wayland, MA — 2012–2014</span></div>
+                <ul>
+                  <li>Manage sales and customer transactions independently</li>
+                  <li>Communicate the daily financial reports to the business owners</li>
+                  <li>Utilize interpersonal skills and business experience to foster decision making</li>
+                  <li>Proficient with the use of Microsoft Point of Sale Software</li>
+                </ul>
+              </section>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 20 -->
+    <section class="slide" id="slide-20" role="group" aria-roledescription="slide" aria-labelledby="slide-20-heading">
+      <h2 id="slide-20-heading">Additional Assistance</h2>
+      <div class="steps-photo-wrap">
+        <img src="/images/accessibility-demo/image-02.jpg" alt="Photograph of the Nittany Lion mascot in a full bear costume standing beside a tall pull-up banner reading &quot;Career &amp; Corporate Connections,&quot; with photos of students and recruiters and the Smeal College of Business logo.">
+        <ol class="steps-list">
+          <li>Sample resumes at <a href="http://careerconnections.smeal.psu.edu">careerconnections.smeal.psu.edu</a></li>
+          <li><a href="https://www.vmock.com/smeal">vmock.com/smeal</a></li>
+          <li>Drop In Resume Reviews (Fall and Spring semesters only)</li>
+          <li>Schedule a Career Coaching appointment (year-round)</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SLIDE 21 -->
+    <section class="slide" id="slide-21" role="group" aria-roledescription="slide" aria-labelledby="slide-21-heading">
+      <h2 id="slide-21-heading">Final Thoughts</h2>
+      <ul class="stack-list">
+        <li class="box-b">Give yourself credit for the experiences you've had</li>
+        <li class="box-a">BE HONEST</li>
+        <li class="box-e">Be prepared to elaborate</li>
+        <li class="box-c">Get multiple opinions</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 22 -->
+    <section class="slide" id="slide-22" role="group" aria-roledescription="slide" aria-labelledby="slide-22-heading">
+      <h2 id="slide-22-heading">PSU 6 Assignment – Part 1</h2>
+      <h3>SmealConnect (2 points)</h3>
+      <p>SmealConnect is a Smeal College of Business online database system designed to connect students with recruiters for internship and co-op opportunities.</p>
+      <ul>
+        <li>Go to <a href="http://careerconnections.smeal.psu.edu/internships-co-ops/smeal-connect/">careerconnections.smeal.psu.edu/internships-co-ops/smeal-connect</a> and review the instructions for gaining access to the SmealConnect system.</li>
+        <li>Read, sign, and submit the <a href="https://php.smeal.psu.edu/corp/intent/">user agreement</a>.</li>
+        <li>Watch the <a href="http://careerconnections.smeal.psu.edu/?s=webshop">webshop on how to use the system</a>.</li>
+        <li>Once you receive notice that your account has been opened, log into the system and update your profile.</li>
+        <li>Your instructor will receive a report of who has set up their account in the SmealConnect system.</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 23 -->
+    <section class="slide" id="slide-23" role="group" aria-roledescription="slide" aria-labelledby="slide-23-heading">
+      <h2 id="slide-23-heading">PSU 6 Assignment – Part 2</h2>
+      <h3>Resume (8 points, including using VMock)</h3>
+      <ul>
+        <li>Review the <a href="http://careerconnections.smeal.psu.edu/?s=webshop">resume webshop</a> (6 minutes).</li>
+        <li>Review <a href="http://careerconnections.smeal.psu.edu/resources/">sample resumes</a>.</li>
+        <li>Create a resume based on what you learned in the webshop and using the sample resumes as a guide. Save a copy of your resume in PDF format.</li>
+        <li>Create your account with <a href="https://www.vmock.com/smeal">VMock</a>, an online resume evaluation tool. Follow the instructions on the instruction sheet — make sure you use the <strong>/smeal</strong> web address.</li>
+        <li>Upload your resume to VMock. VMock compares and scores your resume against other Smeal resumes.</li>
+        <li>Receive and review feedback from VMock, update your resume, and upload the second version. You should see improvement in your score.</li>
+        <li>You are only required to upload your resume one additional time, but you can upload it up to 10 times. You may also visit the Career &amp; Corporate Connections Office in 114 Business Building for more help.</li>
+      </ul>
+      <p>Submit the following to the dropbox in Canvas:</p>
+      <ul>
+        <li>Your original resume and VMock score</li>
+        <li>Your final resume and VMock score</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 24 -->
+    <section class="slide" id="slide-24" role="group" aria-roledescription="slide" aria-labelledby="slide-24-heading">
+      <h2 id="slide-24-heading">Questions?</h2>
+      <address>
+        Career &amp; Corporate Connections<br>
+        114 Business Building<br>
+        <a href="tel:8148636161">814-863-6161</a> | <a href="mailto:smealcareers@psu.edu">smealcareers@psu.edu</a>
+      </address>
+      <ul class="contact-icons">
+        <li>
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3V4z"/></svg></span>
+          <span><strong>Visit.</strong> <a href="http://careerconnections.smeal.psu.edu">careerconnections.smeal.psu.edu</a> and "Personalize Career Alerts"</span>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 8h2V5h-2c-1.7 0-3 1.3-3 3v2H9v3h3v7h3v-7h2.2l.8-3H15V8z"/></svg></span>
+          <span><strong>Like.</strong> Smeal Career Connections on Facebook</span>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.6.8-2.5 1a4 4 0 0 0-6.8 3.6A11.3 11.3 0 0 1 3.9 4.6a4 4 0 0 0 1.2 5.3c-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.5 3.2 3.9-.6.1-1.2.2-1.8.1.5 1.6 2 2.7 3.7 2.8A8 8 0 0 1 2 18.4a11.3 11.3 0 0 0 6.1 1.8c7.3 0 11.3-6.1 11.3-11.3v-.5c.8-.6 1.4-1.3 1.9-2.1-.7.3-1.5.5-2.3.6z"/></svg></span>
+          <span><strong>Follow.</strong> @SmealCareers on Twitter</span>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer class="deck-footer">
+    <img src="/images/accessibility-demo/image-01.jpg" alt="Penn State Smeal College of Business logo">
+    <p>Career &amp; Corporate Connections</p>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var current = 0;
+  var counter = document.getElementById('slide-counter');
+  var prevBtn = document.getElementById('prev-btn');
+  var nextBtn = document.getElementById('next-btn');
+
+  function titleOf(slide){
+    var h = slide.querySelector('h1, h2');
+    return h ? h.textContent.trim() : '';
+  }
+
+  function showSlide(index){
+    if(index < 0 || index >= total) return;
+    slides.forEach(function(slide, i){
+      if(i === index){
+        slide.classList.add('active');
+        slide.removeAttribute('aria-hidden');
+      } else {
+        slide.classList.remove('active');
+        slide.setAttribute('aria-hidden', 'true');
+      }
+    });
+    current = index;
+    counter.textContent = 'Slide ' + (index + 1) + ' of ' + total + ': ' + titleOf(slides[index]);
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === total - 1;
+  }
+
+  prevBtn.addEventListener('click', function(){ showSlide(current - 1); });
+  nextBtn.addEventListener('click', function(){ showSlide(current + 1); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.defaultPrevented) return;
+    if(e.metaKey || e.ctrlKey || e.altKey) return;
+    if(e.key === 'ArrowRight' || e.key === 'PageDown'){
+      showSlide(current + 1);
+      e.preventDefault();
+    } else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){
+      showSlide(current - 1);
+      e.preventDefault();
+    } else if(e.key === 'Home'){
+      showSlide(0);
+      e.preventDefault();
+    } else if(e.key === 'End'){
+      showSlide(total - 1);
+      e.preventDefault();
+    }
+  });
+
+  showSlide(0);
+})();
+</script>
+
+</body>
+</html>
