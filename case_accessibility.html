@@ -229,6 +229,38 @@
                 gap: 30px;
             }
         }
+        .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.comparison-grid img {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    display: block;
+}
+
+.comparison-caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.live-demo-frame {
+    width: 100%;
+    height: 700px;
+    border: 1px solid #e0e0e0;
+    margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -297,6 +329,38 @@
                 <p>This work also positioned the university ahead of ADA Title II compliance deadlines for public entities, which require web and course content to meet WCAG 2.1 Level AA.</p>
             </div>
 
+            <h2>Demo: PDF-to-Accessible-HTML Conversion</h2>
+<p>To illustrate this workflow end to end, here's a real conversion from a fictitious sample assessment report — originally an inaccessible slide-deck-style PDF, remediated into a fully accessible, screen-reader-friendly HTML page.</p>
+
+<h3>Identifying Data Section</h3>
+<div class="comparison-grid">
+    <div>
+        <img src="images/assessment-before-identifying-data.jpg" alt="Before: identifying data shown as plain unstructured text in the original PDF">
+        <p class="comparison-caption">Before — plain text, no semantic relationship between labels and values</p>
+    </div>
+    <div>
+        <img src="images/assessment-after-identifying-data.jpg" alt="After: identifying data shown as a semantic definition list in the remediated HTML">
+        <p class="comparison-caption">After — semantic definition list, label/value pairs exposed to assistive tech</p>
+    </div>
+</div>
+
+<h3>Results Table</h3>
+<div class="comparison-grid">
+    <div>
+        <img src="images/assessment-before-results-table.jpg" alt="Before: results table with no header or data cell markup in the original PDF">
+        <p class="comparison-caption">Before — table has no header/data cell markup</p>
+    </div>
+    <div>
+        <img src="images/assessment-after-results-table.jpg" alt="After: results table with proper scoped headers and caption in the remediated HTML">
+        <p class="comparison-caption">After — real table markup with scoped headers and caption</p>
+    </div>
+</div>
+
+<div class="highlight-box">
+    <h3>Try It Live</h3>
+    <p>This is the actual remediated page — navigate it with a screen reader, keyboard-only, or just resize the text to see the difference.</p>
+    <iframe class="live-demo-frame" src="writing-assessment-reports.html" title="Live interactive demo of the remediated Writing Assessment Reports page"></iframe>
+</div>
         </article>
     </main>
 
